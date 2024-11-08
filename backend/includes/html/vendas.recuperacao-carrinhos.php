@@ -13,7 +13,7 @@ if (isset($_GET['action'])) {
             $time2 = isset($_POST['time2']) ? absint($_POST['time2']) : 0;
             $titulo = isset($_POST['titulo']) ? sanitize_text_field(wp_unslash($_POST['titulo'])) : '';
             $body = isset($_POST['body']) ? wp_kses_post(wp_unslash($_POST['body'])) : '';
-            $mensagem = isset($_POST['mensagem']) ? wp_kses_post(wp_unslash($_POST['mensagem'])) : ''; // Alteração aqui
+            $mensagem = isset($_POST['mensagem']) ? sanitize_text_field(wp_unslash($_POST['mensagem'])) : '';
             $wpdb->insert($table_name, array(
                 'discount' => $discount,
                 'discount_value' => $discount_value,
@@ -34,7 +34,7 @@ if (isset($_GET['action'])) {
             $time2 = isset($_POST['time2']) ? absint($_POST['time2']) : 0;
             $titulo = isset($_POST['titulo']) ? sanitize_text_field(wp_unslash($_POST['titulo'])) : '';
             $body = isset($_POST['body']) ? wp_kses_post(wp_unslash($_POST['body'])) : '';
-            $mensagem = isset($_POST['mensagem']) ? wp_kses_post(wp_unslash($_POST['mensagem'])) : ''; // Alteração aqui
+            $mensagem = isset($_POST['mensagem']) ? sanitize_text_field(wp_unslash($_POST['mensagem'])) : '';
             $wpdb->update($table_name, array(
                 'discount' => $discount,
                 'discount_value' => $discount_value,
